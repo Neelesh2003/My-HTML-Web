@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HTML — Complete Basics</title>
+</head>
+
+<body>
+   <hr>
+  <header>
+    <h1><b>My-HTML-Web</b></h1>
+    <span><a href="/index.html">Home</a></span>&nbsp;&nbsp;
+    <span><a href="/HTML-Web/Day-01-Networking-Basics.html">Networking</a></span>&nbsp;&nbsp;
+    <span><a href="/HTML-Web/Day-02-HTML-Learning.html">What is HTML?</a></span>&nbsp;&nbsp;
+    <span><a href="/Day-02-HTML-Learning.html">Day-03</a></span>&nbsp;&nbsp;
+    <span><a href="/Day-02-HTML-Learning.html">Day-04</a></span>&nbsp;&nbsp;
+    <span><a href="/Day-02-HTML-Learning.html">Day-05</a></span>&nbsp;&nbsp;
+    <span><a href="/Day-02-HTML-Learning.html">Day-06</a></span>&nbsp;&nbsp;
+  </header>
+  <hr>
+
+    <h1>HTML : Hyper Text Markup Language</h1>
+    <p>HTML stands for <strong>HyperText Markup Language</strong>. It is the standard language used to build and
+        structure the content of webpages. Think of it as the skeleton of any website. Once you understand HTML, you can
+        start adding style with CSS and interactivity with JavaScript. In this document, we’ll walk through the most
+        essential HTML elements with clear explanations and examples.</p>
+
+    <h2>Table of contents</h2>
+    <ol>
+        <li><a href="#what">What is HyperText & Markup Language</a></li>
+        <li><a href="#install">Install Required Software</a></li>
+        <li><a href="#headings">Headings (&lt;h1&gt; - &lt;h6&gt;)</a></li>
+        <li><a href="#paragraph">Paragraphs (&lt;p&gt;)</a></li>
+        <li><a href="#hr">Horizontal Rule (&lt;hr&gt;)</a></li>
+        <li><a href="#br">Line Break (&lt;br&gt;)</a></li>
+        <li><a href="#lists">Lists (&lt;ul&gt;, &lt;ol&gt;, &lt;li&gt;)</a></li>
+        <li><a href="#links">Links & Hyperlinks (&lt;a&gt;)</a></li>
+        <li><a href="#images">Images (&lt;img&gt;)</a></li>
+        <li><a href="#summary">Quick Summary</a></li>
+    </ol>
+    <hr>
+    <h2 id="what">What is HyperText and Markup Language?</h2>
+    <ul>
+        <li><strong>HyperText:</strong> This means you can connect one webpage to another using hyperlinks. For example,
+            clicking on a link in an article that takes you to a reference page.</li>
+        <li><strong>Markup Language:</strong> A markup language uses special tags to “mark up” text, giving meaning and
+            structure. For example, wrapping text in <code>&lt;h1&gt;</code> tells the browser it is a main heading, not
+            just plain text.</li>
+    </ul>
+    <p>First website ever created: <a href="https://info.cern.ch/hypertext/WWW/TheProject.html" target="_blank">The
+            World Wide Web Project</a></p>
+    <hr>
+    <h2 id="install">Install Required Software</h2>
+    <ol>
+        <li><strong>Visual Studio Code:</strong> A free editor from Microsoft used to write code. Download: <a
+                href="https://code.visualstudio.com/" target="_blank">VS Code</a></li>
+        <li><strong>Recommended Extensions:</strong>
+            <ul>
+                <li><strong>Live Preview:</strong> Instantly see your HTML output in the browser.</li>
+                <li><strong>Prettier:</strong> Automatically formats your code so it looks clean and consistent.</li>
+                <li><strong>Live Server:</strong> Lets you run your HTML project in a browser with live reload
+                    (refreshes automatically when you save).</li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+    <h2 id="headings">1. Headings (&lt;h1&gt; to &lt;h6&gt;)</h2>
+    <p>Headings are like titles in a book. They define sections and subsections in your content. Search engines and
+        screen readers rely on headings to understand the structure of your page. The size of the text decreases from
+        <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>, but the main purpose is structural importance, not style.
+    </p>
+    <pre>
+&lt;h1&gt;Main Title&lt;/h1&gt;
+&lt;h2&gt;Section Heading&lt;/h2&gt;
+&lt;h3&gt;Subsection&lt;/h3&gt;
+  </pre>
+    <p><strong>Definition:</strong> Headings establish a hierarchy. <code>&lt;h1&gt;</code> is the top-level title,
+        <code>&lt;h2&gt;</code> is for big sections, <code>&lt;h3&gt;</code> is for smaller sections within, and so on.
+        You should normally use only one <code>&lt;h1&gt;</code> per page.
+    </p>
+    <hr>
+    <h2 id="paragraph">2. Paragraph (&lt;p&gt;)</h2>
+    <p>A paragraph is a block of text used for regular content. Browsers automatically add spacing before and after each
+        paragraph so that they are visually separated.</p>
+    <pre>
+&lt;p&gt;This is the first paragraph.&lt;/p&gt;
+&lt;p&gt;This is another paragraph.&lt;/p&gt;
+  </pre>
+    <p><strong>Definition:</strong> Paragraphs are meant for readable chunks of text. Instead of pressing Enter multiple
+        times, you should always use a new <code>&lt;p&gt;</code> for each idea.</p>
+    <hr>
+    <h2 id="hr">3. Horizontal Rule (&lt;hr&gt;)</h2>
+    <p>The <code>&lt;hr&gt;</code> tag represents a thematic break. It’s often displayed as a horizontal line. It
+        separates ideas or sections.</p>
+    <pre>
+&lt;p&gt;Introduction&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;Next Topic&lt;/p&gt;
+  </pre>
+    <p><strong>Definition:</strong> Think of it like drawing a line in your notebook when you want to move to a new
+        idea.</p>
+    <hr>
+    <h2 id="br">4. Line Break (&lt;br&gt;)</h2>
+    <p>The line break tag tells the browser to stop writing on the current line and continue on the next line. Unlike
+        <code>&lt;p&gt;</code>, it does not create extra spacing, it just moves the text down one line.
+    </p>
+    <pre>
+&lt;p&gt;Address Example:&lt;br&gt;
+221B Baker Street&lt;br&gt;
+London, England&lt;/p&gt;
+  </pre>
+    <p><strong>Definition:</strong> Use <code>&lt;br&gt;</code> for small breaks (like in addresses or poems), not for
+        creating paragraphs.</p>
+    <hr>
+    <h2 id="lists">5. Lists (&lt;ul&gt;, &lt;ol&gt;, &lt;li&gt;)</h2>
+    <p>Lists are used to group items. They make information easier to read and scan. There are two main types:</p>
+    <ul>
+        <li><code>&lt;ul&gt;</code> — unordered list (bullets)</li>
+        <li><code>&lt;ol&gt;</code> — ordered list (numbers)</li>
+        <li><code>&lt;li&gt;</code> — list item (goes inside &lt;ul&gt; or &lt;ol&gt;)</li>
+    </ul>
+    <pre>
+&lt;ul&gt;
+  &lt;li&gt;Tea Bag&lt;/li&gt;
+  &lt;li&gt;Water&lt;/li&gt;
+  &lt;li&gt;Sugar&lt;/li&gt;
+  &lt;li&gt;Milk&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Boil water&lt;/li&gt;
+  &lt;li&gt;Add tea, sugar, milk&lt;/li&gt;
+  &lt;li&gt;Boil 5 minutes&lt;/li&gt;
+  &lt;li&gt;Serve&lt;/li&gt;
+&lt;/ol&gt;
+  </pre>
+    <p><strong>Definition:</strong> Use lists whenever you have multiple items to present. <code>&lt;ul&gt;</code> is
+        for items without a sequence (like groceries). <code>&lt;ol&gt;</code> is for steps in order (like recipes).</p>
+    <hr>
+    <h2 id="links">6. Links & Hyperlinks (&lt;a&gt;)</h2>
+    <p>Hyperlinks are what make the web connected. The <code>&lt;a&gt;</code> tag creates a clickable link. It requires
+        the <code>href</code> attribute to specify the destination.</p>
+    <pre>
+&lt;a href="https://www.coderarmy.in/"&gt;Visit Coder Army&lt;/a&gt;
+  </pre>
+    <p><strong>Definition:</strong> The <code>&lt;a&gt;</code> tag stands for “anchor.” It can link to external sites,
+        other pages on your site, or even different sections of the same page.</p>
+
+    <h3>target attribute</h3>
+    <p>By default, links open in the same tab. Use <code>target="_blank"</code> to open in a new tab or window.</p>
+    <pre>
+&lt;a href="https://example.com" target="_blank"&gt;Open Example&lt;/a&gt;
+  </pre>
+
+    <h3>Internal links</h3>
+    <p>You can link within the same page using IDs. This is useful for navigation menus or “Back to top” buttons.</p>
+    <pre>
+&lt;a href="#summary"&gt;Go to Summary&lt;/a&gt;
+  </pre>
+    <hr>
+    <h2 id="images">7. Images (&lt;img&gt;)</h2>
+    <p>The <code>&lt;img&gt;</code> tag inserts an image into your page. It is self-closing and needs two key
+        attributes:</p>
+    <ul>
+        <li><code>src</code> — the file path or URL of the image</li>
+        <li><code>alt</code> — alternative text that describes the image (important for accessibility and SEO)</li>
+    </ul>
+    <pre>
+&lt;img src="https://cdn.britannica.com/16/234216-050-C66F8665/beagle-hound-dog.jpg" alt="Beagle dog" height="200" /&gt;
+  </pre>
+    <p><strong>Definition:</strong> Images add visual content to your webpage. The <code>alt</code> attribute ensures
+        that users with screen readers or poor internet connections can still understand what the image represents.</p>
+    <hr>
+    <h2 id="summary">Quick Summary</h2>
+    <p>Here’s a recap of what we covered:</p>
+    <ul>
+        <li><strong>&lt;h1&gt; - &lt;h6&gt;:</strong> Headings, used to structure your document.</li>
+        <li><strong>&lt;p&gt;:</strong> Paragraphs, used for text blocks.</li>
+        <li><strong>&lt;hr&gt;:</strong> Horizontal line to separate sections.</li>
+        <li><strong>&lt;br&gt;:</strong> Line break, moves text to the next line.</li>
+        <li><strong>&lt;ul&gt;/&lt;ol&gt;/&lt;li&gt;:</strong> Lists, unordered (bullets) or ordered (numbers).</li>
+        <li><strong>&lt;a&gt;:</strong> Links, create navigation to other pages or sections.</li>
+        <li><strong>&lt;img&gt;:</strong> Images, used to add visuals to your content.</li>
+    </ul>
+
+    <p><em>This guide should give you a strong foundation in HTML basics.</em></p>
+
+    <p><strong>Created by:</strong> Neelesh Gupta</p>
+</body>
+
+</html>
