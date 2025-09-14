@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Lists — Complete Guide</title>
+</head>
+
+<body>
+  <hr>
+  <header>
+    <h1><b>My-HTML-Web</b></h1>
+    <span><a href="/index.html">Home</a></span>&nbsp;&nbsp;
+    <span><a href="/HTML-Web/Day-01-Networking-Basics.html">Networking</a></span>&nbsp;&nbsp;
+    <span><a href="/HTML-Web/Day-02-HTML-Learning.html">What is HTML?</a></span>&nbsp;&nbsp;
+    <span><a href="/HTML-Web/Day-03-HTML-List.html">HTMl-Lists</a></span>&nbsp;&nbsp;
+    <span><a href="/Day-02-HTML-Learning.html">Day-04</a></span>&nbsp;&nbsp;
+    <span><a href="/Day-02-HTML-Learning.html">Day-05</a></span>&nbsp;&nbsp;
+    <span><a href="/Day-02-HTML-Learning.html">Day-06</a></span>&nbsp;&nbsp;
+  </header>
+  <hr>
+
+  <main>
+    <h1>HTML Lists — Complete Guide with Examples</h1>
+    <p>
+      Lists are one of the most commonly used features in HTML.
+      They allow developers to present related information in a clean and structured format.
+      This guide explains every type of HTML list in detail, with examples and practical use cases.
+    </p>
+    <nav>
+      <h2>Contents</h2>
+      <ul>
+        <li><a href="#unordered">Unordered List</a></li>
+        <li><a href="#ordered">Ordered List</a></li>
+        <li><a href="#description">Description List</a></li>
+        <li><a href="#nested">Nested Lists</a></li>
+        <li><a href="#combined">Combining Different Lists</a></li>
+        <li><a href="#hyperlinks">Lists with Hyperlinks</a></li>
+        <li><a href="#use-cases">Real Life Use Cases of Lists</a></li>
+        <li><a href="#summary">Summary</a></li>
+      </ul>
+    </nav>
+    <section id="unordered">
+      <h2>1. Unordered List</h2>
+      <p>
+        An unordered list is used to display items where the order does not matter.
+        The items are marked with bullets (●, ○, or ■).
+        This is useful for categories, shopping lists, or general points.
+      </p>
+      <ul>
+        <li>Milk</li>
+        <li>Bread</li>
+        <li>Eggs</li>
+        <li>Cheese</li>
+      </ul>
+      <img src="/images/unordered-list.png" alt="unorder-list">
+      <img src="/images/unordered-list-with-type.png" alt="unorder-list-with-type">
+    </section>
+    <hr>
+
+    <section id="ordered">
+      <h2>2. Ordered List</h2>
+      <p>
+        An ordered list is used when the sequence is important.
+        The browser numbers the items automatically.
+        You can also use Roman numerals, alphabets, or custom numbering by using attributes.
+      </p>
+      <ol>
+        <li>Step 1: Switch on the computer</li>
+        <li>Step 2: Open the browser</li>
+        <li>Step 3: Visit the website</li>
+        <li>Step 4: Start reading</li>
+      </ol>
+      <img src="/images/ordered-list.png" alt="order-list">
+    </section>
+    <hr>
+
+    <section id="description">
+      <h2>3. Description List</h2>
+      <p>
+        A description list is useful for definitions, explanations, or FAQs.
+        It consists of terms (<code>&lt;dt&gt;</code>) and their descriptions (<code>&lt;dd&gt;</code>).
+      </p>
+      <dl>
+        <dt>HTML</dt>
+        <dd>The language used to structure web pages.</dd>
+        <dt>CSS</dt>
+        <dd>The language used to style and design web pages.</dd>
+        <dt>JavaScript</dt>
+        <dd>The programming language used to add interactivity to websites.</dd>
+      </dl>
+    </section>
+    <hr>
+    <section id="nested">
+      <h2>4. Nested Lists</h2>
+      <p>
+        A nested list means one list inside another.
+        This is helpful for breaking items into subcategories.
+      </p>
+      <ul>
+        <li>Fruits
+          <ul>
+            <li>Apple</li>
+            <li>Mango</li>
+            <li>Banana</li>
+          </ul>
+        </li>
+        <li>Vegetables
+          <ul>
+            <li>Potato</li>
+            <li>Tomato</li>
+            <li>Carrot</li>
+          </ul>
+        </li>
+      </ul>
+      <img src="/images/combined-list.png" alt="nested-list">
+    </section>
+    <hr>
+    <section id="combined">
+      <h2>5. Combining Different Lists</h2>
+      <p>
+        Sometimes you may want to combine ordered and unordered lists.
+        For example, while listing out technologies:
+      </p>
+      <ol>
+        <li>Frontend
+          <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+          </ul>
+        </li>
+        <li>Backend
+          <ul>
+            <li>Java</li>
+            <li>Python</li>
+            <li>Node.js</li>
+          </ul>
+        </li>
+      </ol>
+      <img src="/images/combined-list2.png" alt="combined-list">
+    </section>
+    <hr>
+    <section id="hyperlinks">
+      <h2>6. Lists with Hyperlinks</h2>
+      <p>
+        Lists often contain links for easy navigation.
+        For example, a navigation menu of a website can be made using an unordered list with hyperlinks.
+      </p>
+      <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="">About Us</a></li>
+        <li><a href="">Services</a></li>
+        <li><a href="">Contact</a></li>
+      </ul>
+    </section>
+    <hr>
+
+    <section id="use-cases">
+      <h2>7. Real Life Use Cases of Lists</h2>
+      <p>
+        HTML lists are widely used in different parts of a website. Some examples include:
+      </p>
+      <ul>
+        <li>Website menus (navigation bars)</li>
+        <li>Product features on e-commerce websites</li>
+        <li>Steps in online tutorials</li>
+        <li>Glossaries and FAQs</li>
+        <li>Table of contents in articles</li>
+      </ul>
+    </section>
+    <hr>
+
+    <section id="summary">
+      <h2>Summary</h2>
+      <p>
+        To summarize:
+      </p>
+      <ul>
+        <li><strong>Unordered lists</strong> use bullets.</li>
+        <li><strong>Ordered lists</strong> use numbers or letters.</li>
+        <li><strong>Description lists</strong> use terms and definitions.</li>
+        <li><strong>Nested lists</strong> allow subcategories.</li>
+        <li><strong>Combined lists</strong> mix list types.</li>
+        <li><strong>Lists with hyperlinks</strong> are common in menus.</li>
+      </ul>
+      <p>
+        Mastering lists helps in structuring content clearly and making websites user-friendly.
+      </p>
+    </section>
+
+  </main>
+  <hr>
+  <footer>
+    <p>HTML lists are the important tags and concept to creating web pages.</p>
+  </footer>
+</body>
+
+</html>
