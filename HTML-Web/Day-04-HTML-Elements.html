@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Guide: File Paths, Boilerplate, Multi-Page Sites</title>
+</head>
+
+<body>
+        <hr>
+        <header>
+            <h1><b>My-HTML-Web</b></h1>
+            <span><a href="/index.html">Home</a></span>&nbsp;&nbsp;
+            <span><a href="/HTML-Web/Day-01-Networking-Basics.html">Networking</a></span>&nbsp;&nbsp;
+            <span><a href="/HTML-Web/Day-02-HTML-Learning.html">What is HTML?</a></span>&nbsp;&nbsp;
+            <span><a href="/HTML-Web/Day-03-HTML-List.html">HTMl-Lists</a></span>&nbsp;&nbsp;
+            <span><a href="/HTML-Web/Day-04-HTML-Elements.html">HTML-Elements</a></span>&nbsp;&nbsp;
+            <span><a href="/HTML-Web/Day-05-HTML-Forms.html">HTML-Form</a></span>&nbsp;&nbsp;
+            <span><a href="/HTML-Web/Day-06-HTML-Other-Tags.html">HTML-Advanced Tags</a></span>&nbsp;&nbsp;
+        </header>
+        <hr>
+<hr>
+<main>
+    <h1>Table of Contents</h1>
+    <ul>
+        <li><a href="#file-path-system">File Path System</a></li>
+        <li><a href="#relative-file-paths">Relative File Paths</a></li>
+        <li><a href="#absolute-file-paths">Absolute File Paths</a></li>
+        <li><a href="#html-boilerplate">HTML Boilerplate</a></li>
+        <li>
+            <a href="#website-without-boilerplate">Websites Without Boilerplate</a>
+        </li>
+        <li><a href="#multipage-website">Multi-Page Websites</a></li>
+        <li><a href="#div-generic-box">&lt;div&gt; (Generic Box)</a></li>
+        <li><a href="#class-id-labels">class and id Labels</a></li>
+    </ul>
+
+    <h1 id="file-path-system">File Path System</h1>
+    <p>
+        <strong>Definition:</strong> This section explains how websites use file
+        paths to locate and connect different files like HTML, images, and CSS
+        within a project or across the web.
+    </p>
+    <h2 id="first-principle-file-paths">First Principle</h2>
+    <p>
+        A website is not just one file—it’s a bunch of files (HTML, CSS, images,
+        etc.) organized in folders, like stuff on your computer.
+    </p>
+
+    <h2 id="core-problem-file-paths">Core Problem</h2>
+    <p>
+        How does index.html find logo.png? You can’t just write src="logo.png" and
+        hope it works. What if it’s in an images folder? The browser needs a clear
+        address—a file path.
+    </p>
+
+    <h2 id="relative-file-paths">Relative File Paths</h2>
+    <p>
+        <strong>Definition:</strong> Relative file paths describe how to find
+        files starting from your current file’s location, used for linking
+        resources within your website.
+    </p>
+    <p>
+        Relative paths start from your current file’s location. You’ll use these
+        most of the time for your own files.
+    </p>
+    <pre><code>
+my-website/
+├── index.html
+├── about.html
+├── images/
+│   ├── logo.png
+│   └── hero.jpg
+├── pages/
+    ├── contact.html
+    └── terms.html
+    </code></pre>
+    <p><strong>Scenario 1: Same Folder</strong></p>
+    <ul>
+        <li>Problem: Link from index.html to about.html.</li>
+        <li>Logic: They’re in the same folder, so just use the filename.</li>
+        <li>
+            Syntax: <code>&lt;a href="about.html"&gt;About Us&lt;/a&gt;</code>
+        </li>
+    </ul>
+    <p><strong>Scenario 2: Sub-Folder (Down)</strong></p>
+    <ul>
+        <li>Problem: Display logo.png from index.html.</li>
+        <li>Logic: Go into the images folder.</li>
+        <li>Syntax: <code>&lt;img src="images/logo.png" alt="Logo"&gt;</code></li>
+    </ul>
+    <p><strong>Scenario 3: Parent Folder (Up)</strong></p>
+    <ul>
+        <li>
+            Problem: From contact.html (in pages/), display logo.png (in images/).
+        </li>
+        <li>Logic: Go up from pages/ to my-website/, then down to images/.</li>
+        <li>
+            Syntax: <code>&lt;img src="../images/logo.png" alt="Logo"&gt;</code>
+        </li>
+    </ul>
+
+    <h2 id="absolute-file-paths">Absolute File Paths</h2>
+    <p>
+        <strong>Definition:</strong> Absolute file paths provide the full URL to
+        access external resources, like images or fonts hosted on other websites.
+    </p>
+    <p>
+        Absolute paths use the full URL (http:// or https://). Use them for
+        external resources, like Google Fonts or images from another site.
+    </p>
+    <pre><code>
+&lt;a href="https://www.google.com"&gt;Google&lt;/a&gt;
+&lt;img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Html5_logo_and_wordmark.svg" alt="HTML5 Logo"&gt;
+    </code></pre>
+
+    <h2 id="critical-why">Why Avoid Absolute Paths?</h2>
+    <p>
+        Using C:/Users/YourName/... only works on your computer. On a server, it
+        breaks. Browsers also block access to local files for security—no website
+        can sneakily read your files.
+    </p>
+
+    <h2 id="summary-rules-thumb">Rules of Thumb</h2>
+    <ol>
+        <li>
+            Internal files: Use relative paths (filename.html, folder/filename.html,
+            ../filename.html).
+        </li>
+        <li>External files: Use absolute paths (https://example.com).</li>
+    </ol>
+
+    <h2 id="absolute-path-windows">Windows Absolute Paths</h2>
+    <p>
+        Windows uses drive letters (C:\) and backslashes (\). Example:
+        <code>C:\Users\JohnDoe\Documents\report.docx</code>.
+    </p>
+
+    <h2 id="absolute-path-macos">macOS/Linux Absolute Paths</h2>
+    <p>
+        macOS uses a single root (/) and forward slashes (/). Example:
+        <code>/Users/johndoe/Documents/report.docx</code>.
+    </p>
+
+    <h2 id="summary-key-differences">Key Differences</h2>
+    <table border="1">
+        <tr>
+            <th>Feature</th>
+            <th>Windows</th>
+            <th>macOS/Linux</th>
+        </tr>
+        <tr>
+            <td>Root</td>
+            <td>C:\</td>
+            <td>/</td>
+        </tr>
+        <tr>
+            <td>Separator</td>
+            <td>\</td>
+            <td>/</td>
+        </tr>
+        <tr>
+            <td>Example</td>
+            <td>C:\Users\JohnDoe\Documents\report.docx</td>
+            <td>/Users/johndoe/Documents/report.docx</td>
+        </tr>
+    </table>
+
+    <h1 id="html-boilerplate">HTML Boilerplate</h1>
+    <p>
+        <strong>Definition:</strong> The HTML boilerplate is a standard template
+        that sets up essential instructions for browsers to render web pages
+        correctly.
+    </p>
+    <h2 id="first-principle-boilerplate">First Principle</h2>
+    <p>
+        Browsers need clear instructions to render pages properly—HTML version,
+        language, encoding, etc.
+    </p>
+
+    <h2 id="core-problem-boilerplate">Core Problem</h2>
+    <p>
+        Without setup info, browsers can’t know the HTML version, character
+        encoding, or how to handle mobile displays.
+    </p>
+
+    <h2 id="logical-solution-boilerplate">The Boilerplate</h2>
+    <p>
+        A standard template for every HTML file answers these questions.
+        Copy-paste it and tweak as needed.
+    </p>
+
+    <h2 id="anatomy-boilerplate">Boilerplate Breakdown</h2>
+    <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </code></pre>
+    <ul>
+        <li>
+            <strong>&lt;!DOCTYPE html&gt;</strong>: Tells browser to use HTML5
+            rules.
+        </li>
+        <li>
+            <strong>&lt;html lang="en"&gt;</strong>: Sets page language for
+            accessibility/SEO.
+        </li>
+        <li>
+            <strong>&lt;head&gt;</strong>: Holds metadata (not visible on page).
+        </li>
+        <li>
+            <strong>&lt;meta charset="UTF-8"&gt;</strong>: Ensures correct text
+            display.
+        </li>
+        <li>
+            <strong>&lt;meta name="viewport"&gt;</strong>: Makes site
+            mobile-friendly.
+        </li>
+        <li><strong>&lt;title&gt;</strong>: Sets browser tab/bookmark name.</li>
+        <li><strong>&lt;body&gt;</strong>: Contains visible content.</li>
+    </ul>
+
+    <h2 id="conclusion-boilerplate">Conclusion</h2>
+    <p>
+        The boilerplate ensures your site works consistently, is accessible, and
+        mobile-friendly.
+    </p>
+
+    <h1 id="website-without-boilerplate">Websites Without Boilerplate</h1>
+    <p>
+        <strong>Definition:</strong> This section explores why browsers can
+        display pages without a boilerplate but why skipping it causes problems.
+    </p>
+    <h2 id="browsers-forgiving">Forgiving Browsers</h2>
+    <p>
+        Browsers guess to display messy HTML, making the web usable despite
+        errors.
+    </p>
+
+    <h2 id="core-problem-bad-html">Handling Bad HTML</h2>
+    <p>
+        Browsers assume missing tags, guess encoding, or use filenames as titles,
+        but this can cause issues.
+    </p>
+
+    <h2 id="why-use-boilerplate">Why Use Boilerplate?</h2>
+    <p>
+        Without it, you risk inconsistent rendering, broken characters, bad mobile
+        display, and poor SEO/accessibility.
+    </p>
+
+    <h2 id="conclusion-without-boilerplate">Conclusion</h2>
+    <p>
+        Boilerplate is like a solid foundation—skipping it risks a shaky,
+        unreliable website.
+    </p>
+
+    <h1 id="multipage-website">Multi-Page Websites</h1>
+    <p>
+        <strong>Definition:</strong> Multi-page websites organize complex
+        information across multiple pages, connected by navigation, to create a
+        cohesive site.
+    </p>
+    <h2 id="fundamental-truth-multipage">First Principle</h2>
+    <p>
+        Complex info needs multiple pages, like chapters in a book (e.g., Home,
+        About, Contact).
+    </p>
+
+    <h2 id="core-problem-multipage">Core Problem</h2>
+    <p>
+        How to connect pages so they feel like one website, with easy navigation?
+    </p>
+
+    <h2 id="logical-solution-multipage">Navigation Solution</h2>
+    <p>
+        Use consistent headers/footers and a navigation menu with &lt;a&gt; tags
+        on every page.
+    </p>
+
+    <h2 id="div-generic-box">&lt;div&gt; (Generic Box)</h2>
+    <p>
+        <strong>Definition:</strong> The &lt;div&gt; tag groups elements together
+        as a neutral container for styling or layout purposes.
+    </p>
+    <p>
+        <strong>Problem:</strong> Need to group elements (e.g., image, heading,
+        paragraph) for styling.
+    </p>
+    <p><strong>Solution:</strong> &lt;div&gt; acts as a neutral container.</p>
+    <pre><code>
+&lt;div&gt;
+    &lt;img src="avatar.png"&gt;
+    &lt;h2&gt;Arjun Kumar&lt;/h2&gt;
+    &lt;p&gt;Loves to code and teach HTML.&lt;/p&gt;
+&lt;/div&gt;
+    </code></pre>
+
+    <h2 id="class-id-labels">class and id Labels</h2>
+    <p>
+        <strong>Definition:</strong> Class and id attributes label HTML elements
+        for targeted styling or scripting, with id for unique elements and class
+        for groups.
+    </p>
+    <p>
+        <strong>Problem:</strong> How to style specific or groups of &lt;div&gt;s?
+    </p>
+    <p>
+        <strong>Solution:</strong> Use id for unique elements, class for groups.
+    </p>
+    <pre><code>
+&lt;div id="main-header"&gt;...&lt;/div&gt;
+&lt;div id="featured-profile" class="profile-card"&gt;...&lt;/div&gt;
+&lt;div class="profile-card"&gt;...&lt;/div&gt;
+    </code></pre>
+
+    <h2 id="span-inline-highlighter">&lt;span&gt; (Inline Highlighter)</h2>
+    <p>
+        <strong>Definition:</strong> The &lt;span&gt; tag highlights or styles
+        small parts of text inline without disrupting the flow of content.
+    </p>
+    <p>
+        <strong>Problem:</strong> Style a word in a paragraph without breaking the
+        flow.
+    </p>
+    <p><strong>Solution:</strong> Use &lt;span&gt; for inline styling.</p>
+    <pre><code>
+&lt;p&gt;This is very &lt;span class="highlight"&gt;important&lt;/span&gt; information.&lt;/p&gt;
+    </code></pre>
+
+    <h2 id="semantic-tags">Semantic Tags</h2>
+    <p>
+        <strong>Definition:</strong> Semantic tags like &lt;header&gt;,
+        &lt;footer&gt;, and &lt;main&gt; add meaning to page structure, improving
+        accessibility and SEO.
+    </p>
+    <ul>
+        <li><strong>&lt;header&gt;</strong>: Top section (logo, nav).</li>
+        <li>
+            <strong>&lt;footer&gt;</strong>: Bottom section (copyright, links).
+        </li>
+        <li>
+            <strong>&lt;main&gt;</strong>: Unique page content (one per page).
+        </li>
+    </ul>
+    </main>
+    <hr>
+    <footer>
+
+        ////////////////////////////////////////
+    </footer>
+</body>
+
+</html>
